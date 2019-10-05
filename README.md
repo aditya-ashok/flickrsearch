@@ -28,10 +28,7 @@ Response includes an array of photo objects, each represented as:
     "secret": "8983a8ebc7",
     "server": "578",
     "farm": 1,
-    "title": "Merry Christmas!",
-    "ispublic": 1,
-    "isfriend": 0,
-    "isfamily": 0
+    "title": "Tiger",
 }
 To load the photo, you can build the full URL following this pattern:
 http://farm{farm}.static.flickr.com/{server}/{id}_{secret}.jpg
@@ -54,26 +51,39 @@ UISearchBar priving for keyword search access.
 
 # Features
 
-Collection View with flowlayout
-Image Cache
-Generics type Async Network request
- router.requestFor(text: searchBar.text ?? "", with: pageCount.description, decode: { json -> Photos? in
-        guard let flickerResult = json as? Photos else { return  nil }
-        return flickerResult
- }) { [unowned self] result in
-            self.labelLoading.text = ""
-            switch result{
-            case .success(let value):
-                self.updateSearchResult(with: value.photos.photo, nil)
-            case .failure(let error):
-                print(error.debugDescription)
-                self.showAlertWithError((error?.localizedDescription) ??
-                "Please check your Internet connection or try again.", completionHandler: {[unowned self] status in
-                    guard status else { return }
-                    self.fetchSearchImages()
+1. Image Caching : Download image only when it is not available in cache.
+
+ func obtainImageWithPath(imagePath: String, completionHandler: @escaping ImageCacheLoaderCompletionHandler) {
+        
+        //caching image, if not present downloading
+        if let image = self.cache.object(forKey: imagePath as NSString) {
+            DispatchQueue.main.async {
+                completionHandler(image)
+            }
+        } else {
+            let placeholder = UIImage (named: "placeholder.jpg")
+            DispatchQueue.main.async {
+                completionHandler(placeholder!)
+            }
+            let url: URL! = URL(string: imagePath)
+            task = session.downloadTask(with: url, completionHandler: { (location, response, error) in
+                if let data = try? Data(contentsOf: url) {
+                    let img: UIImage! = UIImage(data: data)
+                    self.cache.setObject(img, forKey: imagePath as NSString)
+                    DispatchQueue.main.async {
+                        completionHandler(img)
+                    }
+                }
             })
-      }
-  }
+            task.resume()
+        }
+    }
+    
+  
+  
+ 2. Image on Demand
+ 
+
   
   
 👤 Author
