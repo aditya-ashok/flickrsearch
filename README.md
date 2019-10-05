@@ -5,12 +5,16 @@ Sample code to do a flickr search and display in UICollection view. It asks for 
 Inside this project UISearchBar using for type keywords and UICollectionView for display search results in 3 columns. On reaching the end of the scroll, it asks for new images and then displays.
 
 # Getting Started
-Clone the repo and run Flickr-Search.xcodeproj
-No pod install or carthage update needed directly use this projects
-Create a Flickr API key and replace in line number 15 flickrKey with your own key in Router.swift
-🤔 Requirements
+1. Clone the repo and run Flickr-Search.xcodeproj
+2. No pod install required use this projects
+3. Support Xcode 11
+
+You need a Flickr Api key to run this porject, one sample key is hardcoded in this project. 
+You can replace it with yours. 
+
+# Requirements
 Deployment target of your App is >= iOS 10.0
-XCode 9.3 or later
+XCode 11
 Swift 4.0
 Flickr API Documentation
 Images are retrieved by hitting the Flickr API.
