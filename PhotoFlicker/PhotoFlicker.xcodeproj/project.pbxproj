@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3626425523488D85000840E1 /* ImageCacheLoaderCompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3626425423488D85000840E1 /* ImageCacheLoaderCompletionHandler.swift */; };
+		3626426A234894A3000840E1 /* PhotoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36264269234894A3000840E1 /* PhotoViewControllerTests.swift */; };
 		3658491C2347720700D49F29 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365849192347710900D49F29 /* ViewModel.swift */; };
 		3658491E2347B31E00D49F29 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3658491D2347B31D00D49F29 /* placeholder.jpg */; };
 		366B70CC233E01AA00699638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366B70CB233E01AA00699638 /* AppDelegate.swift */; };
@@ -20,7 +22,21 @@
 		369562F6234445B600A5C8E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369562F5234445B600A5C8E2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3626426123489415000840E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 366B70C0233E01A900699638 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 366B70C7233E01A900699638;
+			remoteInfo = PhotoFlicker;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3626425423488D85000840E1 /* ImageCacheLoaderCompletionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheLoaderCompletionHandler.swift; sourceTree = "<group>"; };
+		3626425C23489415000840E1 /* PhotoFlickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFlickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3626426023489415000840E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36264269234894A3000840E1 /* PhotoViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewControllerTests.swift; sourceTree = "<group>"; };
 		365849192347710900D49F29 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3658491D2347B31D00D49F29 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		366B70C8233E01A900699638 /* PhotoFlicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoFlicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3626425923489415000840E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		366B70C5233E01A900699638 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,18 +70,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3658491B2347714100D49F29 /* Model View */ = {
+		3626425623488E31000840E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3658491D2347B31D00D49F29 /* placeholder.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3626425723488E4B000840E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				369562F1234445A300A5C8E2 /* PhotoCell.swift */,
+				369562F2234445A300A5C8E2 /* PhotoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3626425D23489415000840E1 /* PhotoFlickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				362642682348944C000840E1 /* SupportingFiles */,
+				3626426723489445000840E1 /* Data */,
+				362642662348943E000840E1 /* Cases */,
+				3626426023489415000840E1 /* Info.plist */,
+			);
+			path = PhotoFlickerTests;
+			sourceTree = "<group>";
+		};
+		362642662348943E000840E1 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				36264269234894A3000840E1 /* PhotoViewControllerTests.swift */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		3626426723489445000840E1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		362642682348944C000840E1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3658491B2347714100D49F29 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 				365849192347710900D49F29 /* ViewModel.swift */,
 			);
-			path = "Model View";
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		366B70BF233E01A900699638 = {
 			isa = PBXGroup;
 			children = (
 				366B70CA233E01AA00699638 /* PhotoFlicker */,
+				3626425D23489415000840E1 /* PhotoFlickerTests */,
 				366B70C9233E01A900699638 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				366B70C8233E01A900699638 /* PhotoFlicker.app */,
+				3626425C23489415000840E1 /* PhotoFlickerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,14 +149,13 @@
 		366B70CA233E01AA00699638 /* PhotoFlicker */ = {
 			isa = PBXGroup;
 			children = (
-				3658491B2347714100D49F29 /* Model View */,
-				369562F1234445A300A5C8E2 /* PhotoCell.swift */,
-				369562F2234445A300A5C8E2 /* PhotoViewController.swift */,
+				3626425723488E4B000840E1 /* View */,
+				3626425623488E31000840E1 /* Resources */,
+				3658491B2347714100D49F29 /* View Model */,
 				369562F023443DA300A5C8E2 /* Server */,
 				369562E7234439F900A5C8E2 /* Models */,
 				366B70CB233E01AA00699638 /* AppDelegate.swift */,
 				369562F5234445B600A5C8E2 /* Main.storyboard */,
-				3658491D2347B31D00D49F29 /* placeholder.jpg */,
 				366B70CD233E01AA00699638 /* SceneDelegate.swift */,
 				366B70D4233E01AA00699638 /* Assets.xcassets */,
 				366B70D6233E01AA00699638 /* LaunchScreen.storyboard */,
@@ -101,6 +175,7 @@
 		369562F023443DA300A5C8E2 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				3626425423488D85000840E1 /* ImageCacheLoaderCompletionHandler.swift */,
 				369562E923443A2000A5C8E2 /* FlickrServer.swift */,
 			);
 			path = Server;
@@ -109,6 +184,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3626425B23489415000840E1 /* PhotoFlickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3626426323489415000840E1 /* Build configuration list for PBXNativeTarget "PhotoFlickerTests" */;
+			buildPhases = (
+				3626425823489415000840E1 /* Sources */,
+				3626425923489415000840E1 /* Frameworks */,
+				3626425A23489415000840E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3626426223489415000840E1 /* PBXTargetDependency */,
+			);
+			name = PhotoFlickerTests;
+			productName = PhotoFlickerTests;
+			productReference = 3626425C23489415000840E1 /* PhotoFlickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		366B70C7233E01A900699638 /* PhotoFlicker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 366B70DC233E01AA00699638 /* Build configuration list for PBXNativeTarget "PhotoFlicker" */;
@@ -136,6 +229,11 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Aditya Ashok";
 				TargetAttributes = {
+					3626425B23489415000840E1 = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+						TestTargetID = 366B70C7233E01A900699638;
+					};
 					366B70C7233E01A900699638 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -155,11 +253,19 @@
 			projectRoot = "";
 			targets = (
 				366B70C7233E01A900699638 /* PhotoFlicker */,
+				3626425B23489415000840E1 /* PhotoFlickerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3626425A23489415000840E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		366B70C6233E01A900699638 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,11 +280,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3626425823489415000840E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3626426A234894A3000840E1 /* PhotoViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		366B70C4233E01A900699638 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				366B70CC233E01AA00699638 /* AppDelegate.swift in Sources */,
+				3626425523488D85000840E1 /* ImageCacheLoaderCompletionHandler.swift in Sources */,
 				369562EC23443A2000A5C8E2 /* PhotoItem.swift in Sources */,
 				369562ED23443A2000A5C8E2 /* FlickrServer.swift in Sources */,
 				369562F3234445A300A5C8E2 /* PhotoCell.swift in Sources */,
@@ -189,6 +304,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3626426223489415000840E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 366B70C7233E01A900699638 /* PhotoFlicker */;
+			targetProxy = 3626426123489415000840E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		366B70D6233E01AA00699638 /* LaunchScreen.storyboard */ = {
@@ -202,6 +325,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3626426423489415000840E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UQVJRLUN68;
+				INFOPLIST_FILE = PhotoFlickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aditya.ashok.PhotoFlickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoFlicker.app/PhotoFlicker";
+			};
+			name = Debug;
+		};
+		3626426523489415000840E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UQVJRLUN68;
+				INFOPLIST_FILE = PhotoFlickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aditya.ashok.PhotoFlickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoFlicker.app/PhotoFlicker";
+			};
+			name = Release;
+		};
 		366B70DA233E01AA00699638 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -355,6 +521,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3626426323489415000840E1 /* Build configuration list for PBXNativeTarget "PhotoFlickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3626426423489415000840E1 /* Debug */,
+				3626426523489415000840E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		366B70C3233E01A900699638 /* Build configuration list for PBXProject "PhotoFlicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

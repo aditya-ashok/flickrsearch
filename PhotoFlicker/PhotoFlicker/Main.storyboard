@@ -66,6 +66,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchTextView" destination="eX9-wA-pbn" id="NOM-4i-msx"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h59-RB-qOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
