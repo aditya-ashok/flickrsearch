@@ -109,7 +109,7 @@ UISearchBar priving for keyword search access.
 
 3. Search in Navigation bar
 
-func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         initialize()
         text = textField.text!
