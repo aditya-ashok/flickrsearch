@@ -51,19 +51,9 @@ UISearchBar priving for keyword search access.
         //Requesting here new keyword
         fetchSearchImages()
     }
-Endless Scrolling with pagination
-For providing infinite scroll using here UIScrollView Delegate method it will calculate size which required for pagination new data model
 
-//MARK :- Getting user scroll down event here
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == collectionResult{
-            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)){
-                
-                //Start locading new data from here
-                fetchSearchImages()
-            }
-        }
-    }
+# Features
+
 Collection View with flowlayout
 Image Cache
 Generics type Async Network request
@@ -84,5 +74,7 @@ Generics type Async Network request
             })
       }
   }
+  
+  
 👤 Author
-Anscoder (Anand Nimje)
+Aditya Ashok
