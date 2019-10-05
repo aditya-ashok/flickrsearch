@@ -43,7 +43,7 @@ class PhotoViewController: UICollectionViewController, UITextFieldDelegate {
         
         initialize()
         text = textField.text!
-        viewModel.doSearch(text:text ,page: currentPage) { SearchResults in
+        viewModel.doSearch(text:text ,page: currentPage) {[unowned self] SearchResults in
             self.searches = SearchResults
             for result in self.searches{
                 self.photoItems = self.photoItems + result.searchResults
