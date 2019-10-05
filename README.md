@@ -105,10 +105,44 @@ UISearchBar priving for keyword search access.
                 }
             }
         }
-     }
- 
+        }
 
-  
+3. Search in Navigation bar
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        initialize()
+        text = textField.text!
+        viewModel.doSearch(text:text ,page: currentPage) {[unowned self] SearchResults in
+            self.searches = SearchResults
+            for result in self.searches{
+                self.photoItems = self.photoItems + result.searchResults
+            }
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            textField.layer.borderColor = UIColor.orange.cgColor
+            textField.layer.borderWidth = 2
+            textField.placeholder = "Search"
+        }
+        return true
+    }
+
+
+4. Clear search context : Dedicated button in navigation bar to clear the result result.
+
+  @IBAction func clearTable(_ sender: Any) {
+        print("Clearing list")
+        searches = []
+        photoItems = []
+        text = ""
+        searchTextView.text = ""
+        searchTextView.placeholder = "Search"
+        collectionView.reloadData()
+        
+    }
+
   
 👤 Author
 Aditya Ashok
