@@ -29,7 +29,7 @@ class ViewModel: NSObject {
         indicator.frame = view.view.frame
         indicator.startAnimating()
         
-        server.searchFlickr(for:text,page: page) { searchResults in
+        server.searchFlickr(for:text,page: page) {[unowned self] searchResults in
             indicator.removeFromSuperview()
             
             switch searchResults {
