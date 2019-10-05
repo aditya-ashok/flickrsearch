@@ -132,16 +132,16 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 4. Clear search context : Dedicated button in navigation bar to clear the result result.
 
-  @IBAction func clearTable(_ sender: Any) {
-        print("Clearing list")
-        searches = []
-        photoItems = []
-        text = ""
-        searchTextView.text = ""
-        searchTextView.placeholder = "Search"
-        collectionView.reloadData()
+        @IBAction func clearTable(_ sender: Any) {
+           print("Clearing list")
+           searches = []
+           photoItems = []
+           text = ""
+           searchTextView.text = ""
+           searchTextView.placeholder = "Search"
+           collectionView.reloadData()
         
-    }
+          }
 
   
 👤 Author
