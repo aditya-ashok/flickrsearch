@@ -37,5 +37,3 @@ as below:
 "isfriend": 0,
 "isfamily": 0
 }
-
-
