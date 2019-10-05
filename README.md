@@ -81,7 +81,31 @@ UISearchBar priving for keyword search access.
     
   
   
- 2. Image on Demand
+ 2. Image on Demand : Endless scrolling
+    
+        //load more when the end of the scroll is reached
+    func loadMorePhotos() -> Void {
+        
+        let serialQueue = DispatchQueue(label: "com.test.mySerialQueue")
+        serialQueue.sync {
+            
+            currentPage = currentPage + 1
+            if currentPage != prevPage {
+                var items :[PhotoItem] = []
+                prevPage = currentPage
+                viewModel.doSearch(text: text ,page: currentPage) { SearchResults in
+                    self.searches = SearchResults
+                    for result in self.searches{
+                        items = items + result.searchResults
+                    }
+                    DispatchQueue.main.async {
+                        self.photoItems = items
+                        self.collectionView.reloadData()
+                    }
+                }
+            }
+        }
+     }
  
 
   
