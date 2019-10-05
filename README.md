@@ -1,11 +1,10 @@
-Flickr-Search
-This is the basic example for the Flickr image search module. Its will search any keyword based on your keyword and it will display the images with the endless scrolling.
+# Flickr-Search
 
+Sample code to do a flickr search and display in UICollection view. It asks for a key and it displays the result with endless scrolling.
 
+Inside this project UISearchBar using for type keywords and UICollectionView for display search results in 3 columns. On reaching the end of the scroll, it asks for new images and then displays.
 
-Inside this project UISearchBar using for type keywords and UICollectionView for display search results. It will call request async and display new images based on page count in backgroud simuntaniously.
-
-Getting Started
+# Getting Started
 Clone the repo and run Flickr-Search.xcodeproj
 No pod install or carthage update needed directly use this projects
 Create a Flickr API key and replace in line number 15 flickrKey with your own key in Router.swift
